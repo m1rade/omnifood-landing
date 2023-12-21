@@ -18,14 +18,15 @@
 -- Letter spacing
 - 0.75px
 - -0.7px
+- large 1.05px
 
 --- 1 COLORS
 
 -- Primary: #e67e22
--- Tint: #e98b38 #f3bf91 #F5CBA7 #fae5d3  #fff
--- Shades:
--- Accents:
--- Greys: #170d03 #2e1907 #45260a #7d746d
+-- Tint: #e98b38 #eb984e #f3bf91 #F5CBA7 #fae5d3 #fdf2e9  #fff
+-- Shades: #cf711f #733f11 #45260a #2e1907
+-- Accents: #3ec156
+-- Greys: #170d03  #7d746d #4C4C4C
 
 
 
@@ -36,6 +37,7 @@
 --- 4 BORDER-RADIUS
 
 -- buttons 7px
+-- medium (cards) 11px
 
 
 --- 5 WHITESPACE
@@ -44,26 +46,6 @@
 - 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
 */
-
-/* COMMON STYLES */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Rubik', sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #333;
-}
-
-/* **************************** */
 
 /* HEADER */
 .header {
@@ -102,6 +84,8 @@ body {
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #e67e22;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
 }
 
 .main-nav-link.nav-current-link:link,
@@ -112,8 +96,10 @@ body {
   color: #fff;
 }
 
-.main-nav-link.nav-current-link:hover,
-.main-nav-link.nav-current-link:active {}
+.main-nav-link.nav-current-link:link,
+.main-nav-link.nav-current-link:visited {
+  border-bottom: none;
+}
 
 /* **************************** */
 
@@ -165,7 +151,7 @@ body {
   color: #45260a;
 }
 
-.delivered-text span {
+.delivered-text strong {
   font-size: 2rem;
   font-weight: 700;
 }
@@ -281,4 +267,418 @@ body {
   padding-bottom: 70%;
   background-color: #EC9E59;
   z-index: 1;
+}
+
+/* **************************** */
+
+/* MEALS SECTION */
+.section-meals {
+  padding: 9.6rem 0;
+  background-color: #fdf2e9;
+}
+
+/* Meal cards */
+/* .meal-card {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.056);
+  border-radius: 11px;
+  overflow: hidden;
+
+  transition: all .5s;
+} */
+
+/* .meal-card:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.095);
+} */
+
+.meal-info {
+  padding: 1.6rem 3.2rem 3.2rem;
+}
+
+.meal-tags {
+  margin-bottom: 1.6rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 11px;
+}
+
+.tag--vegan {
+  color: #170d03;
+  background-color: #3ec156;
+}
+
+.tag--paleo {
+  color: #170d03;
+  background-color: #eb984e;
+}
+
+.meal-name {
+  font-size: 2.4rem;
+  color: #170d03;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.meal-attribute {
+  font-size: 2rem;
+  color: #2e1907;
+
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.meal-icon {
+  color: #e67e22;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* **************************** */
+
+/* TESTIMONIALS SECTION */
+.section-testimonials {
+  /* background: linear-gradient(0deg, rgb(243, 191, 145) 70%, rgb(253, 242, 233) 100%); */
+  background-color: #fdf2e9;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1fr
+}
+
+.testimonials-container {
+  padding: 0 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-text {
+  font-size: 2rem;
+  line-height: 1.8;
+  color: #2e1907;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.8rem;
+  color: #4C4C4C;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+
+  margin-bottom: 1.2rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+
+  transition: all .4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1)
+}
+
+/* **************************** */
+
+/* PRICING SECTION */
+.section-pricing {
+  background-color: #fdf2e9;
+  padding: 9.6rem 0;
+}
+
+.pricing-plan-card {
+  width: 80%;
+}
+
+.pricing-plan--starter {
+  justify-self: end;
+  padding: 4.8rem;
+}
+
+.pricing-plan--complete {
+  border: 1px solid #e67e22;
+  background-color: #fae5d3;
+
+  padding: 4.6rem;
+}
+
+.plan-header {
+  text-align: center;
+
+  margin-bottom: 4.8rem;
+}
+
+
+.plan-name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.05px;
+  line-height: 1.5;
+  color: #e67e22;
+
+  margin-bottom: 2.4rem;
+}
+
+.plan-price {
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: #170d03;
+
+  margin-bottom: 1.2rem;
+}
+
+.plan-price span {
+  font-size: 3.6rem;
+  font-weight: 600;
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 2.2rem;
+  line-height: 1.5;
+  color: #4C4C4C;
+}
+
+.plan-buy {
+  text-align: center;
+  margin-top: 4.8rem;
+}
+
+.plan-details {
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: #45260a;
+}
+
+/* FEATUREs */
+.feature-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #e67e22;
+  background-color: #fae5d3;
+  padding: 1.6rem;
+  border-radius: 50%;
+
+  margin-bottom: 3.2rem;
+}
+
+.feature-title {
+  font-size: 2.4rem;
+  color: #170d03;
+  font-weight: 600;
+  line-height: 1.15;
+
+  margin-bottom: 1.6rem;
+}
+
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: #2e1907;
+}
+
+/* **************************** */
+
+/* CTA SECTION */
+.section-cta {
+  padding: 4.8rem 0 12.8rem;
+  background-color: #fdf2e9;
+}
+
+.cta-container {
+  padding: 0 9.6rem;
+}
+
+.cta-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  background-image: linear-gradient(to right bottom, rgb(235, 152, 78), rgb(230, 126, 34));
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  overflow: hidden;
+  border-radius: 11px;
+}
+
+.cta-form-box {
+  color: #45260a;
+  padding: 4.8rem 6.4rem 6.4rem;
+}
+
+.cta-text {
+  font-size: 2rem;
+  line-height: 1.5;
+
+  margin-bottom: 4.8rem;
+}
+
+.cta-img-box {
+  background-image: linear-gradient(to bottom, rgba(235, 152, 78, 0.6) 25%, rgba(230, 126, 34, 0.35) 75%), url(../img/eating.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 1.6rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: inherit;
+  margin-bottom: 0.8rem;
+}
+
+.cta-form input,
+.cta-form select {
+  border: none;
+
+  width: 100%;
+  padding: 1.2rem;
+  font-family: inherit;
+  color: inherit;
+  background-color: #fae5d3;
+  border-radius: 7px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-form input::placeholder {
+  color: #4C4C4C;
+}
+
+.cta-form input:focus-visible,
+.cta-form select:focus-visible {
+  outline: none;
+  box-shadow: -3px 3px 6px #45260a;
+}
+
+/* **************************** */
+
+/* FOOTER */
+.footer {
+  padding: 12.8rem 0;
+  /* background-color: #fdf2e9; */
+  background-image: linear-gradient(to bottom, rgb(253, 242, 233), rgb(243, 191, 145), rgb(230, 126, 34));
+}
+
+.grid-footer {
+  grid-template-columns: 1.5fr 1.5fr repeat(3, 1fr);
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+
+  margin-bottom: 4.8rem;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 1.6rem;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  color: rgba(76, 76, 76, 0.7);
+  line-height: 1.4;
+
+  margin-top: auto;
+}
+
+.footer-socials {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.social-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #4c4c4c;
+}
+
+.social-icon:hover {
+  color: #e67e22;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.contacts p:first-child {
+  margin-bottom: 3.2rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #45260a;
+  transition: all .3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #733f11;
 }
