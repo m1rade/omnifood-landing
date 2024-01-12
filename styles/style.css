@@ -58,6 +58,8 @@
   padding: 2.5rem 4.8rem 0;
 
   background-color: #f3bf91;
+
+  position: relative;
 }
 
 .logo {
@@ -100,6 +102,27 @@
 .main-nav-link.nav-current-link:link,
 .main-nav-link.nav-current-link:visited {
   border-bottom: none;
+}
+
+/* **************************** */
+
+/* BURGER MENU */
+.btn-nav-mobile {
+  border: none;
+  cursor: pointer;
+  background: none;
+
+  display: none;
+}
+
+.nav-icon-mobile {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #170d03;
+}
+
+.nav-icon-mobile[name="close-outline"] {
+  display: none;
 }
 
 /* **************************** */
