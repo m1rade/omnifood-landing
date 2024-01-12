@@ -19,6 +19,7 @@
 - 0.75px
 - -0.7px
 - large 1.05px
+- super large 1.2px
 
 --- 1 COLORS
 
@@ -67,7 +68,7 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 4.8rem;
 }
 
 .main-nav-link:link,
@@ -204,8 +205,6 @@
 }
 
 .step-number {
-  /* color: #F5CBA7; */
-
   font-size: 9.6rem;
   color: #F5CBA7;
   font-weight: 600;
@@ -241,8 +240,7 @@
 }
 
 .step-img-box::before,
-.step-img-box::after,
-.step-img-box img::before {
+.step-img-box::after {
   content: '';
   border-radius: 50%;
   display: block;
@@ -276,20 +274,6 @@
   padding: 9.6rem 0;
   background-color: #fdf2e9;
 }
-
-/* Meal cards */
-/* .meal-card {
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.056);
-  border-radius: 11px;
-  overflow: hidden;
-
-  transition: all .5s;
-} */
-
-/* .meal-card:hover {
-  transform: translateY(-1.2rem);
-  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.095);
-} */
 
 .meal-info {
   padding: 1.6rem 3.2rem 3.2rem;
@@ -364,11 +348,11 @@
 
 /* TESTIMONIALS SECTION */
 .section-testimonials {
-  /* background: linear-gradient(0deg, rgb(243, 191, 145) 70%, rgb(253, 242, 233) 100%); */
   background-color: #fdf2e9;
 
   display: grid;
-  grid-template-columns: 1.5fr 1fr
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
 }
 
 .testimonials-container {
@@ -442,6 +426,26 @@
   background-color: #fae5d3;
 
   padding: 4.6rem;
+
+  position: relative;
+}
+
+.pricing-plan--complete::before {
+  content: 'Best Price';
+  position: absolute;
+  right: -15%;
+  top: 7%;
+  transform: rotate(45deg);
+
+
+  font-size: 1.8rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-color: #eb984e;
+  color: #170d03;
+
+  padding: 0.8rem 5.8rem;
 }
 
 .plan-header {
