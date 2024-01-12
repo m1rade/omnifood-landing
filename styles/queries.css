@@ -82,6 +82,7 @@
   /* show burger menu */
   .btn-nav-mobile {
     display: block;
+    z-index: 9999;
   }
 
   .main-nav {
