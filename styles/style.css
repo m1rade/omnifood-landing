@@ -54,8 +54,10 @@
   justify-content: space-between;
   align-items: center;
 
-  height: 5.2rem;
-  padding: 2.5rem 4.8rem 0;
+  /* height: 5.2rem; */
+  height: 8rem;
+  width: 100%;
+  padding: 0 4.8rem;
 
   background-color: #f3bf91;
 
@@ -64,6 +66,9 @@
 
 .logo {
   height: 2.8rem;
+
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
 }
 
 .main-nav-links {
@@ -93,7 +98,7 @@
 
 .main-nav-link.nav-current-link:link,
 .main-nav-link.nav-current-link:visited {
-  padding: 0.6rem 0.8rem;
+  padding: 0.8rem 0.6rem;
   border-radius: 7px;
   background-color: #e67e22;
   color: #fff;
@@ -123,6 +128,34 @@
 
 .nav-icon-mobile[name="close-outline"] {
   display: none;
+}
+
+/* **************************** */
+
+/* STICKY NAVBAR */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+
+  background: transparent;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(23px);
+  -webkit-backdrop-filter: blur(23px);
+}
+
+.sticky .section-hero {
+  padding-top: 8rem;
+}
+
+.sticky .show-menu.header {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.sticky .show-menu .logo {
+  opacity: 0;
 }
 
 /* **************************** */

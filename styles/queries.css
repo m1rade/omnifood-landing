@@ -82,7 +82,7 @@
   /* show burger menu */
   .btn-nav-mobile {
     display: block;
-    z-index: 9999;
+    z-index: 999;
   }
 
   .main-nav {
@@ -95,8 +95,8 @@
     /* background-color: rgba(245, 245, 220, 0.918); */
     background: rgba(245, 245, 220, 0.37);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.9px);
-    -webkit-backdrop-filter: blur(8.9px);
+    backdrop-filter: blur(23px);
+    -webkit-backdrop-filter: blur(23px);
 
     display: flex;
     justify-content: center;
@@ -138,6 +138,11 @@
   }
 
   /* *************** */
+
+  .main-nav-link.nav-current-link:link,
+  .main-nav-link.nav-current-link:visited {
+    padding: 1.2rem 0.8rem;
+  }
 
   /* hero section */
   .hero-container {
@@ -385,4 +390,16 @@
   }
 
   /* ************ */
+}
+
+/* ************** */
+/* BELOW 352px (Small Phones) */
+@media (max-width: 22em) {
+  .delivered-meals {
+    flex-wrap: wrap;
+  }
+
+  .hero-img img {
+    width: 100%;
+  }
 }
