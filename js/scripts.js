@@ -29,7 +29,9 @@ headerEl.addEventListener('click', function (e) {
     scrollToByTarget(e.target);
 
     // Close mobile nav menu
-    headerEl.classList.toggle('show-menu');
+    if (window.matchMedia('(max-width: 59em)').matches) {
+      headerEl.classList.toggle('show-menu');
+    }
   }
 });
 
@@ -61,7 +63,6 @@ logoLinks.forEach(l => {
 /////////////////////////////////////
 // Sticky nav menu
 const sectionHero = document.querySelector('.section-hero');
-const headerHeight = headerEl.getBoundingClientRect().height;
 
 const obs = new IntersectionObserver(
   ([entry]) => {
@@ -71,50 +72,45 @@ const obs = new IntersectionObserver(
   {
     root: null,
     threshold: 0,
-    rootMargin: `-${headerHeight}px`,
   }
 );
 obs.observe(sectionHero);
 
 /////////////////////////////////////
 // Animation for nav menu
-/* const allMenuSections = document.querySelectorAll('.menu');
+const allMenuSections = document.querySelectorAll('.menu');
 const navLinksMap = [...document.querySelectorAll('.main-nav-link')].reduce((obj, el) => {
   obj[el.dataset.section] = el;
   return obj;
 }, {});
 
-
-let currentActiveNavLink = document.querySelector('.nav-current-link');
+// let currentActiveNavLink = document.querySelector('.nav-current-link');
 
 const obsSections = new IntersectionObserver(
-  ([entry]) => {
-    console.log(entry);
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.intersectionRatio >= 0.3) {
+          const currentLink = document.querySelector('.nav-current-link');
 
-    if (entry.isIntersecting) {
-      const targetId = entry.target.getAttribute('id');
+          if (currentLink) {
+            currentLink.classList.remove('nav-current-link');
+          }
 
-      if (currentActiveNavLink && currentActiveNavLink.classList.contains('nav-current-link')) {
-        currentActiveNavLink.classList.remove('nav-current-link');
+          const id = entry.target.getAttribute('id');
+
+          navLinksMap[id].classList.add('nav-current-link');
+        }
       }
-
-      const navLink = navLinksMap[targetId];
-
-      navLink.classList.add('nav-current-link');
-      currentActiveNavLink = navLink;
-    } else {
-      console.log(entry);
-      // if (!currentActiveNavLink) return;
-      // currentActiveNavLink.classList.remove('nav-current-link');
-    }
+    });
   },
   {
     root: null,
-    threshold: 0.1,
+    threshold: 0.35,
   }
 );
 
-allMenuSections.forEach(s => obsSections.observe(s)); */
+allMenuSections.forEach(s => obsSections.observe(s));
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions

@@ -62,6 +62,8 @@
   background-color: #f3bf91;
 
   position: relative;
+
+  transition: all .5s ease-in;
 }
 
 .logo {
@@ -102,11 +104,13 @@
   border-radius: 7px;
   background-color: #e67e22;
   color: #fff;
+  border-bottom: none;
 }
 
-.main-nav-link.nav-current-link:link,
-.main-nav-link.nav-current-link:visited {
-  border-bottom: none;
+.header-logo.main-nav-link.nav-current-link:link,
+.header-logo.main-nav-link.nav-current-link:visited {
+  background-color: transparent;
+  padding: 0;
 }
 
 /* **************************** */
