@@ -90,7 +90,7 @@ const obsSections = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        if (entry.intersectionRatio >= 0.3) {
+        if (entry.intersectionRatio >= 0.1) {
           const currentLink = document.querySelector('.nav-current-link');
 
           if (currentLink) {
@@ -106,7 +106,7 @@ const obsSections = new IntersectionObserver(
   },
   {
     root: null,
-    threshold: 0.35,
+    threshold: 0.1,
   }
 );
 
